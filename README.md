@@ -1,4 +1,4 @@
-# Assignment for Subject 'Android Developement' (Week 01)
+# Assignment for 'Android Developement' (Week 01)
 
 ## Objective:
 - Transition to code from a exist design
