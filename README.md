@@ -1,6 +1,8 @@
-# Assignment for 'Android Developement' (Week 01)
+# Assignment for 'Android Developement'
 
-## Objective:
+## Week 2 Challenge
+
+## Week 1 Challenge
 - Transition to code from a exist design
 - 5 layouts: Welcome, Onboarding One, Sign Up, Login, and Verification Code
 
