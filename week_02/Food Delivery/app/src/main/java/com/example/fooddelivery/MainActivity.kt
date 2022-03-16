@@ -17,6 +17,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }, 2000)
 
+//        val profileBtn = findViewById<Button>(R.id.btnProfile);
+//        profileBtn.setOnClickListener {
+//            val Intent = Intent(this, ProfileActivity::class.java)
+//            startActivity(Intent)
+//        }
+
 //        val welBtn = findViewById<Button>(R.id.btnWelcome);
 //        welBtn.setOnClickListener {
 //            val Intent = Intent(this, WelcomeActivity::class.java)
