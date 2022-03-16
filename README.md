@@ -1,5 +1,12 @@
 # Assignment for 'Android Developement'
 
+## Group 4 Member
+1. 18200211	Võ Văn Quang
+2. 18200210	Trần Tú Quang
+3. 18200199	Diệp Thế Phong
+4. 18200271	Đỗ Ngọc Trung
+5. 18200215	Nguyễn Lê Quý
+
 ## Week 2 Challenge
 - Create flow app
 - Validate email & password
