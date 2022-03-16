@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Food Delivery</string>
-    <string name="sub_heading_text">Please type the verification code sent to 18200210.trantuquang@gmail.com</string>
-    <string name="verification_code">Verification Code</string>
+    <string name="dialog_message">Dialog Message Test</string>
+    <string name="dialog_title">Dialog Title</string>
+    <string name="yesX">Yes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
