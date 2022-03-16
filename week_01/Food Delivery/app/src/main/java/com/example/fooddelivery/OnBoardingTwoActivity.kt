@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 
-class OnBoardingOneActivity : AppCompatActivity() {
+class OnBoardingTwoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_on_boarding_one)
+        setContentView(R.layout.activity_on_boarding_two)
         val button = findViewById<ImageView>(R.id.imageView17)
         button.setOnClickListener {
-            val intent = Intent(this, OnBoardingTwoActivity::class.java)
+            val intent = Intent(this, OnBoardingThreeActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
