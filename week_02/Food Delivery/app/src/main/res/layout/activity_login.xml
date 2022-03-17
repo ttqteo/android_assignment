@@ -40,8 +40,8 @@
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress4" />
+        app:layout_constraintStart_toStartOf="@+id/buttonlogin"
+        app:layout_constraintTop_toBottomOf="@+id/edit_password" />
 
     <TextView
         android:id="@+id/textView3"
@@ -53,8 +53,8 @@
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="@+id/buttonlogin"
+        app:layout_constraintTop_toBottomOf="@+id/buttonlogin" />
 
     <TextView
         android:id="@+id/textView4"
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonlogin"
         android:layout_width="246dp"
         android:layout_height="60dp"
         android:layout_marginTop="21dp"
@@ -100,7 +100,7 @@
         android:layout_width="153dp"
         android:layout_height="57dp"
         android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/white"
+        android:background="@drawable/box2"
         android:drawableLeft="@drawable/ic_group_17863"
         android:padding="10dp"
         android:text="FACEBOOK"
@@ -118,7 +118,7 @@
         android:id="@+id/buttongg"
         android:layout_width="153dp"
         android:layout_height="57dp"
-        android:backgroundTint="@color/white"
+        android:background="@drawable/box2"
         android:drawableLeft="@drawable/ic_super_g"
         android:padding="10dp"
         android:text="GOOGLE"
@@ -132,18 +132,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageButton
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="40dp"
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="37dp"
         android:background="@drawable/box2"
-        android:src="@drawable/ic_path_3391"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        android:drawableLeft="@drawable/ic_backicon"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/edit_username"
         android:layout_width="300dp"
         android:layout_height="65dp"
         android:layout_marginTop="10dp"
@@ -157,7 +159,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress4"
+        android:id="@+id/edit_password"
         android:layout_width="300dp"
         android:layout_height="65dp"
         android:layout_marginTop="10dp"
@@ -192,8 +194,8 @@
         android:text="Password"
         android:textColor="#9796A1"
         android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+        app:layout_constraintStart_toStartOf="@+id/edit_username"
+        app:layout_constraintTop_toBottomOf="@+id/edit_username" />
 
     <TextView
         android:id="@+id/textView7"
@@ -204,6 +206,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonlogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
