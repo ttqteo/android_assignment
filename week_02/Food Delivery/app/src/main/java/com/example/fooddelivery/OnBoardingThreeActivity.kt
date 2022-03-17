@@ -10,7 +10,7 @@ class OnBoardingThreeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_on_boarding_three)
         Handler().postDelayed({
-            var intent = Intent(this, LoginActivity::class.java)
+            var intent = Intent(this,WelcomeActivity::class.java)
             startActivity(intent)
         }, 2000)
 
