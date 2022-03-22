@@ -31,11 +31,11 @@ class SignupActivity : AppCompatActivity() {
             }
         }
 
-        lifecycle.coroutineScope.launchWhenCreated {
-            userManager.getName().collect {
-                binding.abc.text = it
-            }
-        }
+//        lifecycle.coroutineScope.launchWhenCreated {
+//            userManager.getName().collect {
+//                binding.id.text = it
+//            }
+//        }
     }
 
 }

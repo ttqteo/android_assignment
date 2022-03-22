@@ -102,12 +102,7 @@
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <TextView
-                android:id="@+id/abc"
-                android:layout_width="305dp"
-                android:layout_height="40dp">
 
-            </TextView>
 
             <EditText
                 android:id="@+id/edtEmail"
