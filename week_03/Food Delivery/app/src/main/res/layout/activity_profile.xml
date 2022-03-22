@@ -103,7 +103,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <EditText
         android:id="@+id/editUsername"
@@ -121,7 +121,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/edtEmail"
         android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="12dp"

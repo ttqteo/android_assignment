@@ -11,7 +11,7 @@ class OnBoardingTwoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_on_boarding_two)
         val button = findViewById<ImageView>(R.id.imageView17)
         button.setOnClickListener {
-            val intent = Intent(this, OnBoardingThreeActivity::class.java)
+            val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
         }
     }

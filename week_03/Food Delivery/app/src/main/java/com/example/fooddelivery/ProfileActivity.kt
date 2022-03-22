@@ -24,7 +24,7 @@ class ProfileActivity : AppCompatActivity() {
         val setName = findViewById<EditText>(R.id.editUsername).setOnClickListener {
             showDialog()
         }
-        val setEmail = findViewById<EditText>(R.id.editTextTextEmailAddress).setOnClickListener {
+        val setEmail = findViewById<EditText>(R.id.edtEmail).setOnClickListener {
             showDialog()
         }
         val setPhone = findViewById<EditText>(R.id.editTextPhone).setOnClickListener {
@@ -38,7 +38,7 @@ class ProfileActivity : AppCompatActivity() {
         val view : View = LayoutInflater.from(this).inflate(R.layout.layout_dialog, null)
 
         val editName = findViewById<EditText>(R.id.editUsername)
-        val editMail = findViewById<EditText>(R.id.editTextTextEmailAddress)
+        val editMail = findViewById<EditText>(R.id.edtEmail)
         val editPhone = findViewById<EditText>(R.id.editTextPhone)
 
         val textName = view.findViewById<EditText>(R.id.textFullName)
