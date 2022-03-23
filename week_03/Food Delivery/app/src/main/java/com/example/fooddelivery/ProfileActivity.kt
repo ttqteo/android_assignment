@@ -6,67 +6,75 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.example.fooddelivery.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityProfileBinding
+    private lateinit var viewModel: ProfileModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_profile)
+        binding.user = com.example.fooddelivery.User("Tran Tu Quang", "ronaldo@gmail.com", "987654366")
+        viewModel = ViewModelProvider(this).get(ProfileModel::class.java)
 
-        val backBtn = findViewById<Button>(R.id.btnBack);
-        backBtn.setOnClickListener {
+        binding.btnBack.setOnClickListener {
             val Intent = Intent(this, MainActivity::class.java)
             startActivity(Intent)
         }
 
-        val setName = findViewById<EditText>(R.id.editUsername).setOnClickListener {
-            showDialog()
-        }
-        val setEmail = findViewById<EditText>(R.id.edtEmail).setOnClickListener {
-            showDialog()
-        }
-        val setPhone = findViewById<EditText>(R.id.editTextPhone).setOnClickListener {
-            showDialog()
-        }
-
+        binding.editProfile.setOnClickListener({ showDialog() })
 
     }
 
+
     private fun showDialog() {
-        val view : View = LayoutInflater.from(this).inflate(R.layout.layout_dialog, null)
 
-        val editName = findViewById<EditText>(R.id.editUsername)
-        val editMail = findViewById<EditText>(R.id.edtEmail)
-        val editPhone = findViewById<EditText>(R.id.editTextPhone)
-
-        val textName = view.findViewById<EditText>(R.id.textFullName)
-        textName.setText(editName.text.toString())
-        val textEmail = view.findViewById<EditText>(R.id.textEmail)
-        textEmail.setText(editMail.text.toString())
-        val textPhoneNumber = view.findViewById<EditText>(R.id.textPhoneNumber)
-        textPhoneNumber.setText(editPhone.text.toString())
+        val layoutDialog : View = LayoutInflater.from(this).inflate(R.layout.layout_dialog, null)
+        val textName = layoutDialog.findViewById<EditText>(R.id.textFullName)
+        textName.setText(binding.editUsername.text.toString())
+        val textEmail = layoutDialog.findViewById<EditText>(R.id.textEmail)
+        textEmail.setText(binding.edtEmail.text.toString())
+        val textPhoneNumber = layoutDialog.findViewById<EditText>(R.id.textPhoneNumber)
+        textPhoneNumber.setText(binding.editTextPhone.text.toString())
 
         val builder = AlertDialog.Builder(this)
-            .setView(view)
+            .setView(layoutDialog)
             .setTitle("Edit Information")
 
         builder.apply {
-            setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
-                //get string
-                val userName : String = textName.text.toString()
-                val email : String = textEmail.text.toString()
-                val phone : String = textPhoneNumber.text.toString()
-                // set string
-                editName.setText(userName)
-                editMail.setText(email)
-                editPhone.setText(phone)
+            setPositiveButton("Change", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
+                viewModel.checkEmail(textEmail.text.toString())
+                listenerSuccessEvent(textName.text.toString(), textEmail.text.toString(), textPhoneNumber.text.toString())
+                listenerErrorEvent()
+
             })
             setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
 
             })
         }
         builder.show()
+    }
+
+    private fun listenerSuccessEvent(name: String, email:String, phone:String) {
+        viewModel.isSuccessEvent.observe(this) { isSucess ->
+            if (isSucess) {
+                binding.user = com.example.fooddelivery.User(name, email, phone)
+            }
+        }
+    }
+    private fun listenerErrorEvent() {
+        viewModel.isErrorEvent.observe(this) { errMsg ->
+            val dialog = AlertDialog.Builder(this)
+            dialog.setTitle("Lỗi")
+            dialog.setMessage(errMsg)
+            dialog.show()
+//            Toast.makeText(this, errMsg, Toast.LENGTH_SHORT).show()
+        }
     }
 }
