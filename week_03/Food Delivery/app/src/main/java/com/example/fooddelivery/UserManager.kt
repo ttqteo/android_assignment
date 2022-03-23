@@ -25,15 +25,15 @@ class UserManager(val context: Context) {
         }
     }
 
-    fun getName() = context.dataStore.data.map {
+    public final fun getName() = context.dataStore.data.map {
         it[USER_NAME_KEY]?:""
     }
 
-    fun getEmail() = context.dataStore.data.map {
+    public final fun getEmail() = context.dataStore.data.map {
         it[USER_EMAIL_KEY]?:""
     }
 
-    fun getPass() = context.dataStore.data.map {
+    public final fun getPass() = context.dataStore.data.map {
         it[USER_PASS_KEY]?:""
     }
 }
