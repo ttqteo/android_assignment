@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-enum class Error {
-    ERROR_EMAIL,
-    ERROR_PASSWORD,
-}
-class Resp(val isSuccess: Boolean, val error: Error?)
+//enum class Error{
+//    ERROR_EMAIL,
+//    ERROR_PASSWORD,
+//}
+//class Resp(val isSuccess: Boolean, val error: Error?)
 class SignupViewmode: ViewModel() {
     private var _isSuccessEvent: MutableLiveData<Boolean> = MutableLiveData()
     val isSuccessEvent: LiveData<Boolean>
