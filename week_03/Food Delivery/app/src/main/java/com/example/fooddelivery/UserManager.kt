@@ -12,20 +12,26 @@ class UserManager(val context: Context) {
     val Context.dataStore : DataStore<Preferences> by preferencesDataStore("user_prefs")
 
     companion object{
-        val USER_NAME_KEY = stringPreferencesKey("USER_NAME")
-        val USER_EMAIL_KEY = stringPreferencesKey("USER_EMAIL")
-        val USER_PASS_KEY = stringPreferencesKey("USER_PASS")
+        //val USER_NAME_KEY = stringPreferencesKey("USER_NAME")
+        //val USER_EMAIL_KEY = stringPreferencesKey("USER_EMAIL")
+        //val USER_PASS_KEY = stringPreferencesKey("USER_PASS")
+        var USER_NAME_KEY = toString()
+        var USER_EMAIL_KEY = toString()
+        var USER_PASS_KEY = toString()
     }
 
     suspend fun storeUser(name: String, email: String, pass: String){
         context.dataStore.edit {
-            it[USER_NAME_KEY] = name
-            it[USER_EMAIL_KEY] = email
-            it[USER_PASS_KEY] = pass
+            //it[USER_NAME_KEY] = name
+            //it[USER_EMAIL_KEY] = email
+            //it[USER_PASS_KEY] = pass
+            USER_NAME_KEY = name
+            USER_EMAIL_KEY = email
+            USER_PASS_KEY = pass
         }
     }
 
-    public final fun getName() = context.dataStore.data.map {
+   /* public final fun getName() = context.dataStore.data.map {
         it[USER_NAME_KEY]?:""
     }
 
@@ -35,5 +41,5 @@ class UserManager(val context: Context) {
 
     public final fun getPass() = context.dataStore.data.map {
         it[USER_PASS_KEY]?:""
-    }
+    }*/
 }
