@@ -18,17 +18,24 @@ import com.example.fooddelivery.databinding.ActivityLoginBinding
 import java.text.Bidi
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
     private lateinit var  viewModel: ProfileModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         viewModel = ViewModelProvider(this).get(ProfileModel::class.java)
+
         binding.btnBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
+        binding.textView4.setOnClickListener {
+            val intent1 = Intent(this, SignupActivity::class.java)
+            startActivity(intent1)
+        }
 
         //val bundle =Bundle()
 
@@ -43,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-                  /*  if (binding.editUsername.text.toString() == "ronaldo@gmail.com" && binding.editPassword.editText.toString() == "123456") {
+                  /*  if (binding.editUsername.text.toString() == "ronaldo@gmail.com" && binding.editPassword.editText.toString() == "123456789") {
 
 
                         val builder = AlertDialog.Builder(this)

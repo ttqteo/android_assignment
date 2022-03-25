@@ -12,6 +12,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.fooddelivery.databinding.ActivityProfileBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
@@ -20,7 +23,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_profile)
-        binding.user = com.example.fooddelivery.User("Tran Tu Quang", "ronaldo@gmail.com", "987654366")
+        binding.user = com.example.fooddelivery.User(UserManager.USER_NAME_KEY, UserManager.USER_EMAIL_KEY, UserManager.USER_PHONE_KEY)
         viewModel = ViewModelProvider(this).get(ProfileModel::class.java)
 
         binding.btnBack.setOnClickListener {
@@ -50,9 +53,11 @@ class ProfileActivity : AppCompatActivity() {
         builder.apply {
             setPositiveButton("Change", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
                 viewModel.checkEmail(textEmail.text.toString())
-                listenerSuccessEvent(textName.text.toString(), textEmail.text.toString(), textPhoneNumber.text.toString())
+                listenerSuccessEvent(textName.text.toString(),
+                    textEmail.text.toString(),
+                    textPhoneNumber.text.toString()
+                )
                 listenerErrorEvent()
-
             })
             setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
 
@@ -67,6 +72,9 @@ class ProfileActivity : AppCompatActivity() {
                 binding.user = com.example.fooddelivery.User(name, email, phone)
             }
         }
+        UserManager.USER_EMAIL_KEY = email
+        UserManager.USER_NAME_KEY = name
+        UserManager.USER_PHONE_KEY = phone
     }
     private fun listenerErrorEvent() {
         viewModel.isErrorEvent.observe(this) { errMsg ->

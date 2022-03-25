@@ -13,6 +13,5 @@ class OnBoardingThreeActivity : AppCompatActivity() {
             var intent = Intent(this,WelcomeActivity::class.java)
             startActivity(intent)
         }, 2000)
-
     }
 }

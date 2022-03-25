@@ -64,7 +64,7 @@
                 app:srcCompat="@drawable/ic_sign_up_text" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -72,24 +72,6 @@
                 android:text="Full name"
                 app:layout_constraintStart_toStartOf="@+id/imageView8"
                 app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="e-mail"
-                app:layout_constraintStart_toStartOf="@+id/edtName"
-                app:layout_constraintTop_toBottomOf="@+id/edtName" />
-
-            <TextView
-                android:id="@+id/editProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="password"
-                app:layout_constraintStart_toStartOf="@+id/edtEmail"
-                app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
             <EditText
                 android:id="@+id/edtName"
@@ -99,10 +81,17 @@
                 android:background="@drawable/box3"
                 android:ems="10"
                 android:inputType="textPersonName"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintStart_toStartOf="@+id/textViewName"
+                app:layout_constraintTop_toBottomOf="@+id/textViewName" />
 
-
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="e-mail"
+                app:layout_constraintStart_toStartOf="@+id/edtName"
+                app:layout_constraintTop_toBottomOf="@+id/edtName" />
 
             <EditText
                 android:id="@+id/edtEmail"
@@ -112,8 +101,17 @@
                 android:background="@drawable/box3"
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                app:layout_constraintStart_toStartOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintStart_toStartOf="@+id/textViewEmail"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+
+            <TextView
+                android:id="@+id/editProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="password"
+                app:layout_constraintStart_toStartOf="@+id/edtEmail"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
             <EditText
                 android:id="@+id/edtPass"
