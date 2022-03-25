@@ -7,6 +7,9 @@
 4. 18200271	Đỗ Ngọc Trung
 5. 18200215	Nguyễn Lê Quý
 
+## Week 3 Challenge
+- Practice **Data Binding** & **View Model** & **Live Data** into SignUp, Login, Profile
+
 ## Week 2 Challenge
 - Create flow app
 - Validate email & password
