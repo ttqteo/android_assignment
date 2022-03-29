@@ -25,7 +25,7 @@ class SignupViewmode: ViewModel() {
             _isErrorEvent.postValue("email không hợp lệ")
             return
         }
-        //password length > 8 && < 10
+        //password length > 8 && < 20
         val isValidPassword = isPasswordValid(password)
         if (!isValidPassword) {
             _isErrorEvent.postValue("password không hợp lệ")
@@ -39,6 +39,22 @@ class SignupViewmode: ViewModel() {
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        return password.length in 8..20
+
+//        return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()]){8,}$".toRegex())
+        if(password.length < 8){
+            return false
+        }else if(!password.matches(".*[a-z].*".toRegex())){
+            return false
+        }else if(!password.matches(".*[A-Z].*".toRegex())){
+            return false
+        }
+        else if(!password.matches(".*[0-9].*".toRegex())){
+            return false
+        }else if(!password.matches(".*[!@#$%^&*()].*".toRegex())){
+            return false
+        }
+        return true
+
+//        return password.length in 8..20
     }
 }
