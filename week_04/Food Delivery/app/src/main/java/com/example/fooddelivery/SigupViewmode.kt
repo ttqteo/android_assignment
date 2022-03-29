@@ -25,10 +25,10 @@ class SignupViewmode: ViewModel() {
             _isErrorEvent.postValue("email không hợp lệ")
             return
         }
-        //password length > 8 && < 20
+        //password
         val isValidPassword = isPasswordValid(password)
         if (!isValidPassword) {
-            _isErrorEvent.postValue("password không hợp lệ")
+//            _isErrorEvent.postValue("Password không hợp lệ")
             return
         }
         _isSuccessEvent.postValue(true)
@@ -42,15 +42,20 @@ class SignupViewmode: ViewModel() {
 
 //        return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()]){8,}$".toRegex())
         if(password.length < 8){
+            _isErrorEvent.postValue("Password phải có ít nhất 8 ký tự")
             return false
         }else if(!password.matches(".*[a-z].*".toRegex())){
+            _isErrorEvent.postValue("Password phải có ít nhất 1 chữ viết thường")
             return false
         }else if(!password.matches(".*[A-Z].*".toRegex())){
+            _isErrorEvent.postValue("Password phải có ít nhất 1 chữ viết hoa")
             return false
         }
         else if(!password.matches(".*[0-9].*".toRegex())){
+            _isErrorEvent.postValue("Password phải có ít nhất 1 ký tự số")
             return false
         }else if(!password.matches(".*[!@#$%^&*()].*".toRegex())){
+            _isErrorEvent.postValue("Password phải có ít nhất 1 ký tự đặt biệt: !@#$%^&*()")
             return false
         }
         return true
