@@ -12,7 +12,7 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
         val btskip = findViewById<Button>(R.id.welcome_skip)
         btskip.setOnClickListener{
-            val Intent = Intent(this, LoginActivity::class.java)
+            val Intent = Intent(this, RestaurantActivity::class.java)
             startActivity(Intent)
         }
         val btsignin = findViewById<TextView>(R.id.welcome_sign_in)
