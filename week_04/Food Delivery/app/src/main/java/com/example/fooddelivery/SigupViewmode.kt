@@ -25,6 +25,7 @@ class SignupViewmode: ViewModel() {
             _isErrorEvent.postValue("email không hợp lệ")
             return
         }
+        //password length > 8 && < 10
         //password length > 8 && < 20
         val isValidPassword = isPasswordValid(password)
         if (!isValidPassword) {

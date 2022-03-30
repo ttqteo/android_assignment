@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Demo">
         <activity
+            android:name=".RestaurantActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity android:name=".OnBoardingOneActivity" />
@@ -18,14 +21,10 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            />
-
-
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".SignupActivity"
             android:exported="false" />
-
         <activity
             android:name=".WelcomeActivity"
             android:exported="false" />

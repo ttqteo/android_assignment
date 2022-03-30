@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
@@ -31,7 +32,13 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent)
         }
 
+        binding.btnToRestaureant.setOnClickListener{
+            val Intent = Intent(this, RestaurantActivity::class.java)
+            startActivity(Intent)
+        }
+
         binding.editProfile.setOnClickListener({ showDialog() })
+
 
     }
 
