@@ -7,6 +7,12 @@
 4. 18200271	Đỗ Ngọc Trung
 5. 18200215	Nguyễn Lê Quý
 
+# Week 4 Challenge
+
+- Validate SignUp Account
+- Create Object Restaurant and show off
+- Use **Menu Options** allow user to choose type display
+
 ## Week 3 Challenge
 - Practice **Data Binding** & **View Model** & **Live Data** into SignUp, Login, Profile
 
