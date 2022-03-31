@@ -3,14 +3,15 @@ package com.example.fooddelivery
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 
+import android.widget.ImageView
 import android.widget.TextView
+
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.ResViewHolder>(RestaurantDiffUtil()) {
+class RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.RestaurantViewHolder>(RestaurantDiffUtil()) {
 
     class RestaurantDiffUtil : DiffUtil.ItemCallback<Restaurant>() {
         override fun areItemsTheSame(oldItem: Restaurant, newItem: Restaurant): Boolean {
@@ -23,33 +24,33 @@ class RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.ResViewHolde
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResViewHolder {
-        return ResViewHolder.from(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
+        return RestaurantViewHolder.from(parent)
     }
 
-    override fun onBindViewHolder(holder: ResViewHolder, position: Int) {
-        val res = getItem(position)
-        holder.bindData(res)
+    override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
+        val restaurant = getItem(position)
+        holder.bindData(restaurant)
     }
 
 
-    class ResViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class RestaurantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         companion object {
-            fun from(parent: ViewGroup) : ResViewHolder {
+            fun from(parent: ViewGroup) : RestaurantViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val view = layoutInflater.inflate(R.layout.activity_restaurant, parent, false)
-                return ResViewHolder(view)
+                val view = layoutInflater.inflate(R.layout.item_restaurant, parent, false)
+                return RestaurantViewHolder(view)
             }
         }
 
         fun bindData(res: Restaurant) {
-            val resName = itemView.findViewById<TextView>(R.id.restaurant_name)
-            val resAddress = itemView.findViewById<TextView>(R.id.restaurant_address)
-            val resAvatar = itemView.findViewById<ImageView>(R.id.restaurant_avatar)
+            val restaurantName = itemView.findViewById<TextView>(R.id.restaurant_name)
+            val restaurantAddress = itemView.findViewById<TextView>(R.id.restaurant_address)
+            val restaurantAvatar = itemView.findViewById<ImageView>(R.id.restaurant_avatar)
 
-//            resName.text = res.name.toString()
-//            resAddress.text = res.address.toString()
-//            resAvatar.setImageResource(res.avatar)
+            restaurantName.text = res.name.toString()
+            restaurantAddress.text = res.address.toString()
+            restaurantAvatar.setImageResource(res.avatar)
         }
     }
 }
