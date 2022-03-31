@@ -10,11 +10,6 @@ import java.io.InputStreamReader
 object Datastore {
 
 object DataStore {
-    fun getDataRestaurant(context: Context): List<RestaurantModel> {
-        val file = File(context.filesDir, "db_restaunrant.jl")
-        val TAG = "MyActivity"
-        val contents = FileInputStream(file).bufferedReader().use {
-            Log.i("test",it.readLine())
         fun getDataSet(): List<Restaurant> {
             return listOf(
                 Restaurant(33760, "Du Miên Garden Cafe - Phan Văn Trị", "Du Miên Garden Cafe - Phan Văn Trị, Quận Gò Vấp, TP. HCM ", R.drawable.r33760),
@@ -43,9 +38,6 @@ object DataStore {
                 Restaurant(232015,"Cowboy Jack's - American Dining - Lotte Mart Gò Vấp","Tầng 1, Lotte Mart Gò Vấp, 242 Nguyễn Văn Lượng, P. 10, Quận Gò Vấp, TP. HCM", R.drawable.r232015),
 
             )
-        }
-        return listOf(
-            RestaurantModel(1, "abc", "bcd", "cad")
-        )
+        
     }
 }
