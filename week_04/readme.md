@@ -6,4 +6,5 @@
 
 # Screenshot
 - Sign up, log in, check email & password valid, view profile, add linearlayoutmanager list and gridlayoutmanager list
-![Licecap](https://user-images.githubusercontent.com/93138165/161299470-b9b9c016-ef7a-42d6-8740-a287208f4467.gif)
+![Licecap](https://user-images.githubusercontent.com/93138165/161299806-45fab5e6-6d8a-43ab-81fa-c26dd8bfa192.gif)
+
