@@ -58,7 +58,7 @@ class ProfileModel : ViewModel() {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
     private fun isPasswordValid(password : String ):Boolean{
-        return password.length in 8..10
+        return password.length > 8
     }
     private fun isEmailAndPasswordNotEmpty(email: String,password: String):Boolean{
         val passwordNotEmpty = password.isNotEmpty()

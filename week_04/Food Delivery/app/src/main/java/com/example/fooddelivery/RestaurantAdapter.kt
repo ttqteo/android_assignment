@@ -24,6 +24,10 @@ class RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.RestaurantVi
 
     }
 
+    public override fun getItemViewType(position: Int): Int {
+
+        return super.getItemViewType(position)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
         return RestaurantViewHolder.from(parent)
     }
@@ -32,7 +36,6 @@ class RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.RestaurantVi
         val restaurant = getItem(position)
         holder.bindData(restaurant)
     }
-
 
     class RestaurantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         companion object {
