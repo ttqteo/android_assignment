@@ -3,6 +3,7 @@
 - Validate SignUp Account
 - Create Object Restaurant and show off
 - Use **Menu Options** allow user to choose type display
+- Toggle Linear View <-> Grid View
 
 # Screenshot
 - Sign up, log in, check email & password valid, view profile, add linearlayoutmanager list and gridlayoutmanager list
