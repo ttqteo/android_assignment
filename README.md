@@ -12,6 +12,7 @@
 - Validate SignUp Account
 - Create Object Restaurant and show off
 - Use **Menu Options** allow user to choose type display
+- Toggle Linear View <-> Grid View
 
 ## Week 3 Challenge
 - Practice **Data Binding** & **View Model** & **Live Data** into SignUp, Login, Profile
