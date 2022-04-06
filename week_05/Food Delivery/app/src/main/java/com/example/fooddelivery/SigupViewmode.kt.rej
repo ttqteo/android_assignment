@@ -1,0 +1,10 @@
+diff a/week_04/Food Delivery/app/src/main/java/com/example/fooddelivery/SigupViewmode.kt b/week_04/Food Delivery/app/src/main/java/com/example/fooddelivery/SigupViewmode.kt	(rejected hunks)
+@@ -25,7 +25,7 @@
+             _isErrorEvent.postValue("email không hợp lệ")
+             return
+         }
+-        //password length > 8 && < 10
++        //password length > 8 && < 20
+         val isValidPassword = isPasswordValid(password)
+         if (!isValidPassword) {
+             _isErrorEvent.postValue("password không hợp lệ")
