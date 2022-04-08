@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.fooddelivery.mainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_onBoardingOneFragment"
+            app:destination="@id/onBoardingOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingOneFragment"
+        android:name="com.example.fooddelivery.OnBoardingOneFragment"
+        android:label="OnBoardingOneFragment"
+        tools:layout="@layout/fragment_on_boarding_one"
+        >
+        <action
+            android:id="@+id/action_onBoardingOneFragment_to_onBoardingTwoFragment"
+            app:destination="@id/onBoardingTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingTwoFragment"
+        android:name="com.example.fooddelivery.OnBoardingTwoFragment"
+        android:label="OnBoardingTwoFragment"
+        tools:layout="@layout/fragment_on_boarding_two"
+        >
+        <action
+            android:id="@+id/action_onBoardingTwoFragment_to_onBoardingThreeFragment"
+            app:destination="@id/onBoardingThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingThreeFragment"
+        android:name="com.example.fooddelivery.OnBoardingThreeFragment"
+        android:label="OnBoardingThreeFragment"
+        tools:layout="@layout/fragment_on_boarding_three">
+        <action
+            android:id="@+id/action_onBoardingThreeFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.fooddelivery.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.fooddelivery.SignupFragment"
+        android:label="SignupFragment"
+        tools:layout="@layout/fragment_signup"
+
+    >
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.fooddelivery.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"
+    >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
