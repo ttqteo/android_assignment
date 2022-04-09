@@ -58,7 +58,6 @@ class SignupFragment : Fragment() {
     private fun listennerSuccessEvent(){
         ViewModel.isSuccessEvent.observe(viewLifecycleOwner){ isSuccess->
             if(isSuccess){
-
                 CoroutineScope(Dispatchers.IO).launch {
                     userManager.storeUser(
                         binding.edtName.text.toString().trim(),
@@ -68,9 +67,7 @@ class SignupFragment : Fragment() {
                 }
                 val controller = findNavController()
                 controller.navigate(R.id.action_signupFragment_to_loginFragment)
-
             }
-
         }
     }
     private fun listennerErrorEvent(){

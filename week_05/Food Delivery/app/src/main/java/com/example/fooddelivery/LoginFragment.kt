@@ -62,7 +62,7 @@ class LoginFragment : Fragment() {
                 val password = binding.editPassword.text.toString().trim()
 
                 val controller = findNavController()
-                // controller.navigate(R.id.action_loginFragment_to_profileFragment)
+                 controller.navigate(R.id.action_loginFragment_to_mainFragment)
             }
         }
     }
