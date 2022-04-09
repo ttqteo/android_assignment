@@ -7,6 +7,12 @@
 4. 18200271	Đỗ Ngọc Trung
 5. 18200215	Nguyễn Lê Quý
 
+## Week 5 Challenge
+
+- Create work-flow app
+- Build app based on **Navigation Component**
+- All screens use **Fragment** instead of **Activity**
+
 ## Week 4 Challenge
 
 - Validate SignUp Account
