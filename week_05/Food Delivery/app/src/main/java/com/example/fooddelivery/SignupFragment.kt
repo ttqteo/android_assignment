@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.fooddelivery.databinding.FragmentSignupBinding
-
+import com.example.fooddelivery.DataAccount
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import android.widget.Toast
+import androidx.datastore.dataStore
 
 class SignupFragment : Fragment() {
 
@@ -24,7 +25,13 @@ class SignupFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ViewModel= ViewModelProvider(this).get(SignupViewmode::class.java)
+       // userManager = UserManager(this)
+
     }
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,8 +46,6 @@ class SignupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ViewModel= ViewModelProvider(this).get(SignupViewmode::class.java)
-        //userManager = UserManager(this)
 
         binding.textView5.setOnClickListener {
             val controller = findNavController()
@@ -58,13 +63,21 @@ class SignupFragment : Fragment() {
     private fun listennerSuccessEvent(){
         ViewModel.isSuccessEvent.observe(viewLifecycleOwner){ isSuccess->
             if(isSuccess){
-                CoroutineScope(Dispatchers.IO).launch {
-                    userManager.storeUser(
-                        binding.edtName.text.toString().trim(),
-                        binding.edtEmail.text.toString().trim(),
-                        binding.edtPass.text.toString().trim()
-                    )
-                }
+
+
+//                    userManager.storeUser(
+//                        binding.edtName.text.toString().trim(),
+//                        binding.edtEmail.text.toString().trim(),
+//                        binding.edtPass.text.toString().trim()
+//                    )
+
+                DataAccount.createAccount(
+                    binding.edtName.text.toString().trim(),
+                    binding.edtEmail.text.toString().trim(),
+                    binding.edtPass.text.toString().trim()
+                )
+
+
                 val controller = findNavController()
                 controller.navigate(R.id.action_signupFragment_to_loginFragment)
             }

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.RestaurantViewHolder>(RestaurantDiffUtil()) {
+class   RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.RestaurantViewHolder>(RestaurantDiffUtil()) {
 
     class RestaurantDiffUtil : DiffUtil.ItemCallback<Restaurant>() {
         override fun areItemsTheSame(oldItem: Restaurant, newItem: Restaurant): Boolean {
@@ -32,12 +32,12 @@ class RestaurantAdapter : ListAdapter<Restaurant, RestaurantAdapter.RestaurantVi
         return RestaurantViewHolder.from(parent)
     }
 
-    override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) { //do du lieu vào tưng item
         val restaurant = getItem(position)
         holder.bindData(restaurant)
     }
 
-    class RestaurantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class RestaurantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) { ///lấy item chuyển thành đối tượng
         companion object {
             fun from(parent: ViewGroup) : RestaurantViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)

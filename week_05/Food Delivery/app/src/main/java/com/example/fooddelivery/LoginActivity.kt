@@ -33,8 +33,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.textView4.setOnClickListener {
-            val intent1 = Intent(this, SignupActivity::class.java)
-            startActivity(intent1)
+            //val intent1 = Intent(this, SignupActivity::class.java)
+            //startActivity(intent1)
         }
 
         //val bundle =Bundle()
@@ -50,33 +50,6 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-                  /*  if (binding.editUsername.text.toString() == "ronaldo@gmail.com" && binding.editPassword.editText.toString() == "123456789") {
-
-
-                        val builder = AlertDialog.Builder(this)
-                        builder.apply {
-                            title = "Android Alert"
-                            setMessage("Log in successfully")
-                            setNegativeButton(
-                                "",
-                                DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
-                                })
-                        }
-                        builder.show()
-
-                    }
-                    else
-                    {
-                        val builder = AlertDialog.Builder(this)
-                        builder.apply {
-                            title= "Android Alert"
-                            setMessage("Wrong username or password")
-                            setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
-                            })
-                        }
-                        builder.show()
-                    }
-                }*/
 
 
     private fun listenerSuccessEvent() {

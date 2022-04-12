@@ -3,6 +3,7 @@ package com.example.fooddelivery
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.fooddelivery.DataAccount
 import com.example.fooddelivery.databinding.ActivityLoginBinding
 
 enum class Error {
@@ -31,6 +32,7 @@ class ProfileModel : ViewModel() {
         _isSuccessEvent.postValue(true)
     }
     fun checkEmailAndPassword(email: String,password: String) {
+
         val isNotEmptyEmailAndPassword = isEmailAndPasswordNotEmpty(email,password)
         if(!isNotEmptyEmailAndPassword){
             _isErrorEvent.postValue("Enter your Email and password")
@@ -46,12 +48,23 @@ class ProfileModel : ViewModel() {
             _isErrorEvent.postValue("Password InValid")
             return
         }
-        val emailPasswordCorrect = correctEmailAndPassword(email, password)
-        if (!emailPasswordCorrect) {
-            _isErrorEvent.postValue("Incorrect Email or Password")
+//        val emailPasswordCorrect = correctEmailAndPassword(email, password)
+//        if (!emailPasswordCorrect) {
+////        if (!emailPasswordCorrect) {
+//            _isErrorEvent.postValue("Incorrect Email or Password")
+//            return
+//        }
+        if (email != DataAccount.getAccountInfo().email) {
+            _isErrorEvent.postValue("Email không tồn tại")
+            return
+        }
+        if (password != DataAccount.getAccountInfo().password) {
+            _isErrorEvent.postValue("Password không đúng")
             return
         }
         _isSuccessEvent.postValue(true)
+
+
     }
 
     private fun isEmailValid(email: String): Boolean {

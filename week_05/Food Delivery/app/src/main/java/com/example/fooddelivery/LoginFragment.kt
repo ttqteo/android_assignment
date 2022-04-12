@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.fooddelivery.databinding.FragmentLoginBinding
 import com.example.fooddelivery.databinding.FragmentWelcomeBinding
@@ -58,24 +60,29 @@ class LoginFragment : Fragment() {
         viewModel.isSuccessEvent.observe(viewLifecycleOwner) { isSucess ->
             if (isSucess) {
 
-                val email = binding.editUsername.text.toString().trim()
-                val password = binding.editPassword.text.toString().trim()
+
 
                 val controller = findNavController()
-                 controller.navigate(R.id.action_loginFragment_to_mainFragment)
+                 controller.navigate(R.id.action_loginFragment_to_profileFragment)
+//                viewModel.isErrorEvent.observe(viewLifecycleOwner){errMsg ->
+//            Toast.makeText( this@LoginFragment.requireContext(),"da dang nhap", Toast.LENGTH_SHORT).show()
+//        }
             }
         }
     }
     private fun listenerErrorEvent() {
-//        viewModel.isErrorEvent.observe(viewLifecycleOwner) { errMsg ->
-//            val builder = AlertDialog.Builder(this)
-//            builder.apply {
-//                var title = "Android Alert"
-//                setMessage(errMsg)
-//                setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
-//                })
-//            }
-//            builder.show()
+        viewModel.isErrorEvent.observe(viewLifecycleOwner) { errMsg ->
+            val builder = AlertDialog.Builder(requireContext())
+            builder.apply {
+                var title = "Android Alert"
+                setMessage(errMsg)
+                setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface: DialogInterface?, id: Int ->
+                })
+            }
+            builder.show()
+        }
+//        viewModel.isErrorEvent.observe(viewLifecycleOwner){errMsg ->
+//            Toast.makeText( this@LoginFragment.requireContext(),errMsg, Toast.LENGTH_SHORT).show()
 //        }
     }
 

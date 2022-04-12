@@ -35,7 +35,7 @@ class WelcomeFragment : Fragment() {
         }
         binding.welcomeSkip.setOnClickListener {
             val controller = findNavController()
-            // controller.navigate(R.id.action_welcomeFragment_to_restaurantFragment)
+            controller.navigate(R.id.action_welcomeFragment_to_restaurantFragment)
         }
     }
 
