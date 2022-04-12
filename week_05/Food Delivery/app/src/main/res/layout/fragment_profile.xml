@@ -3,16 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+   <!-- <data>
         <variable
             name="user"
             type="com.example.fooddelivery.User" />
     </data>
-
+-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ProfileActivity">
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Your Name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="36dp"
+            android:text="Log Out"
+            android:textAllCaps="false"
+            app:cornerRadius="50sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnBack"
@@ -55,13 +81,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="132dp"
-            android:text="@{user.name}"
+
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView3" />
+       <!-- android:text="@{user.name}"-->
 
         <TextView
             android:id="@+id/editProfile"
@@ -121,13 +148,14 @@
             android:layout_marginTop="12dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@{user.name}"
+
             android:focusable="false"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleUsername"
             tools:ignore="TouchTargetSizeCheck" />
+        <!--android:text="@{user.name}"-->
 
         <TextView
             android:id="@+id/edtEmail"
@@ -136,12 +164,13 @@
             android:layout_marginTop="12dp"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:text="@{user.email}"
+
             android:focusable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleUsername2"
             tools:ignore="TouchTargetSizeCheck" />
+<!--        android:text="@{user.email}"-->
 
         <TextView
             android:id="@+id/editTextPhone"
@@ -150,13 +179,14 @@
             android:layout_marginTop="12dp"
             android:ems="10"
             android:inputType="phone"
-            android:text="@{user.phone.toString()}"
+
             android:textStyle="bold"
             android:focusable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleUsername3"
             tools:ignore="TouchTargetSizeCheck" />
+        <!-- android:text="@{user.phone.toString()}"-->
 
         <ImageView
             android:id="@+id/imageView4"
@@ -167,15 +197,6 @@
             app:layout_constraintStart_toStartOf="@+id/imageView3"
             app:layout_constraintTop_toTopOf="@+id/imageView3"
             app:srcCompat="@drawable/edit_avatar" />
-
-        <ImageView
-            android:id="@+id/btnToRestaureant"
-            android:layout_width="120dp"
-            android:layout_height="109dp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/img_12" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

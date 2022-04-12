@@ -84,17 +84,34 @@
             app:popUpToInclusive="true"
             />
         <action
-            android:id="@+id/action_loginFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_loginFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
     </fragment>
+    <!-- app:popUpTo="@layout/fragment_welcome"
+            app:popUpToInclusive="false"-->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.fooddelivery.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_welcomeFragment3"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@layout/fragment_welcome"
+            app:popUpToInclusive="false"
+            />
+
+        <action
+            android:id="@+id/action_profileFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
     <fragment
         android:id="@+id/restaurantFragment"
         android:name="com.example.fooddelivery.RestaurantFragment"
         android:label="RestaurantFragment"
-        tools:layout="@layout/fragment_restaurant"/>
+        tools:layout="@layout/fragment_restaurant">
+        <action
+            android:id="@+id/action_restaurantFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

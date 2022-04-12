@@ -63,7 +63,7 @@ class LoginFragment : Fragment() {
 
 
                 val controller = findNavController()
-                 controller.navigate(R.id.action_loginFragment_to_profileFragment)
+                 controller.navigate(R.id.action_loginFragment_to_restaurantFragment)
 //                viewModel.isErrorEvent.observe(viewLifecycleOwner){errMsg ->
 //            Toast.makeText( this@LoginFragment.requireContext(),"da dang nhap", Toast.LENGTH_SHORT).show()
 //        }

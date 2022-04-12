@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.fooddelivery.DataAccount
-import com.example.fooddelivery.databinding.ActivityLoginBinding
+
 
 enum class Error {
     ERROR_EMAIL,

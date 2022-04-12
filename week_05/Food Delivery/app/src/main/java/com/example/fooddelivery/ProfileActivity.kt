@@ -32,10 +32,10 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent)
         }
 
-        binding.btnToRestaureant.setOnClickListener{
+//        binding.btnToRestaureant.setOnClickListener{
 //            val Intent = Intent(this, RestaurantActivity::class.java)
 //            startActivity(Intent)
-        }
+//        }
 
         binding.editProfile.setOnClickListener({ showDialog() })
 

@@ -30,6 +30,10 @@ class RestaurantFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(RestaurantViewModal::class.java)
+        binding1.imvProfileCorner.setOnClickListener {
+            val controller = findNavController()
+            controller.navigate(R.id.action_restaurantFragment_to_profileFragment)
+        }
 
         adapter =RestaurantAdapter()
         val lm =LinearLayoutManager(this@RestaurantFragment.requireContext())
