@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentRateBinding
 import com.example.movieapp.databinding.FragmentTopratedBinding
@@ -30,6 +31,7 @@ class RateFragment : Fragment() {
     lateinit var vm: TopratedVM
     lateinit var adapter: TopratedAdapter
     lateinit var binding: FragmentRateBinding
+    var flag : Boolean= true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +47,15 @@ class RateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpMovieList()
+        binding.buttonlist.setOnClickListener {
+        binding.rv.layoutManager = LinearLayoutManager(context)
+
+    }
+
+    binding.buttongrid.setOnClickListener {
+        binding.rv.layoutManager = GridLayoutManager(context, 2)
+    }
+
         registerMovieList()
         registerErrorList()
     }
@@ -58,6 +69,7 @@ class RateFragment : Fragment() {
         binding.rv.layoutManager = lm
         binding.rv.adapter = adapter
     }
+
     private fun registerMovieList() {
         vm.movieData.observe(viewLifecycleOwner) {
             adapter.submitList(it)
