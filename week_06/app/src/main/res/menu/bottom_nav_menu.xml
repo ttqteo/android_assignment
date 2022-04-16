@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/play_bot"
+        android:icon="@drawable/ic_baseline_play_arrow_24"
+
+        android:title="Playing" />
+    <item
+        android:id="@+id/rate_bot"
+        android:icon="@drawable/ic_baseline_star_rate_24"
+
+        android:title="Top rate" />
+
+</menu>
