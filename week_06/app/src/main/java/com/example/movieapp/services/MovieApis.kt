@@ -12,4 +12,11 @@ interface MovieApis {
         @Query("api_key") api_key: String,
     ): MovieResp
 
+    //    ///movie top rated
+    @GET("movie/top_rated")
+    suspend fun listRatedMovies(
+        @Query("language") language: String,
+        @Query("page") page: Int,
+    ): MovieResp
 }
+
