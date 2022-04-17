@@ -7,6 +7,13 @@
 4. 18200271	Đỗ Ngọc Trung
 5. 18200215	Nguyễn Lê Quý
 
+## Week 6 Challenge (Final)
+
+- Get API
+- Now playing & Top rated Layout
+- Navigation bottom
+- Switch from linear & grid layout
+
 ## Week 5 Challenge
 
 - Create work-flow app
