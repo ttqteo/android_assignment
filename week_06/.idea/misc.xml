@@ -14,7 +14,10 @@
         <entry key="..\:/android/android_assignment/week_06/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/android/android_assignment/week_06/app/src/main/res/layout/fragment_playing.xml" value="0.20416666666666666" />
         <entry key="..\:/android/android_assignment/week_06/app/src/main/res/layout/fragment_rate.xml" value="0.20416666666666666" />
+        <entry key="..\:/android/android_assignment/week_06/app/src/main/res/layout/fragment_toprated.xml" value="0.1" />
         <entry key="..\:/android/android_assignment/week_06/app/src/main/res/layout/movie_item.xml" value="0.1" />
+        <entry key="..\:/android/android_assignment/week_06/app/src/main/res/layout/mv_item.xml" value="0.1" />
+        <entry key="..\:/android/android_assignment/week_06/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/android_assignment/week_06/app/src/main/res/layout/home_fragment.xml" value="0.2421875" />
       </map>
     </option>

@@ -20,16 +20,13 @@ class PlayingVM: ViewModel() {
 
     fun getNowPlaying() {
         viewModelScope.launch {
-            try {
+
                 val movieResp = MovieRestClient.getInstance().api.listNowPlayMovies(
                     language = "en_US",
                     page = 1,
-
                 )
                 _movieData.postValue(movieResp.results!!)
-            } catch (e: Exception) {
-                _errEvent.value = e.message
-            }
+
         }
     }
 
