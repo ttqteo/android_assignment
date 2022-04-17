@@ -9,7 +9,7 @@ interface MovieApis {
     suspend fun listNowPlayMovies(
         @Query("language") language: String,
         @Query("page") page: Int,
-        @Query("api_key") api_key: String,
+
     ): MovieResp
 
     //    ///movie top rated
@@ -18,5 +18,6 @@ interface MovieApis {
         @Query("language") language: String,
         @Query("page") page: Int,
     ): MovieResp
+
 }
 

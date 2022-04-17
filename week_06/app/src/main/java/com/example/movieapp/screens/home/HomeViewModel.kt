@@ -15,7 +15,7 @@ class HomeViewModel : ViewModel() {
 
     fun getNowPlaying() {
         viewModelScope.launch {
-            val movieResp = MovieRestClient.getInstance().api.listNowPlayMovies(language = "en-US", page = 1, api_key = "7519cb3f829ecd53bd9b7007076dbe23")
+            val movieResp = MovieRestClient.getInstance().api.listNowPlayMovies(language = "en-US", page = 1, )
             _movieData.postValue(movieResp.results!!)
         }
     }
