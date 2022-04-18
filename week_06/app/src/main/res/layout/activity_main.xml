@@ -12,21 +12,6 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bot_nav"
-        />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bot_nav"
-        android:background="#FF0000"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        >
-
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        android:layout_above="@+id/bot_nav" />
 
 </RelativeLayout>

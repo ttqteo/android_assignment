@@ -2,4 +2,7 @@
     <string name="app_name">Movie App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name = "NoActionBar" parent = "@android:style/Theme.Holo.Light">
+        <item name = "android:windowActionBar">true</item>
+    </style>
 </resources>

@@ -49,14 +49,14 @@ class PlayingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpMovieList()
-        binding.buttonlist.setOnClickListener {
+        /*binding.buttonlist.setOnClickListener {
             binding.rv.layoutManager = LinearLayoutManager(context)
 
         }
 
         binding.buttongrid.setOnClickListener {
             binding.rv.layoutManager = GridLayoutManager(context, 2)
-        }
+        }*/
 
         registerMovieList()
         registerErrorList()
@@ -83,3 +83,4 @@ class PlayingFragment : Fragment() {
         }
     }
 }
+
