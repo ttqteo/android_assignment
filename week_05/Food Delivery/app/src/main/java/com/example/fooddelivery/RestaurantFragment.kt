@@ -37,8 +37,8 @@ class RestaurantFragment : Fragment() {
 
         adapter =RestaurantAdapter()
         val lm =LinearLayoutManager(this@RestaurantFragment.requireContext())
-        binding1.rvRestaurant.layoutManager=lm
-        binding1.rvRestaurant.adapter=adapter
+        binding1.rvRestaurant.layoutManager = lm
+        binding1.rvRestaurant.adapter = adapter
         registerData()
 
 
