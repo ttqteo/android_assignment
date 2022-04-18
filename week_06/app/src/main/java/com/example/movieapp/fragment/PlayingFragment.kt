@@ -28,6 +28,7 @@ class PlayingFragment : Fragment() {
 //        // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_toprated, container, false)
 //    }
+//}
 
     lateinit var vm: PlayingVM
     lateinit var adapter: PlayingAdapter
